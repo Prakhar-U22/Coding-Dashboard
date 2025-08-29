@@ -14,6 +14,8 @@ export default defineConfig(({ mode }) => {
         }
       },
       server: {
+        port: process.env.PORT || 5173,
+        host: '0.0.0.0',
         proxy: {
           '/api/leetcode': {
             target: 'https://leetcode-api-pied.vercel.app',
