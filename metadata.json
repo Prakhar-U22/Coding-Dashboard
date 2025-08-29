@@ -1,0 +1,5 @@
+{
+  "name": "Coder Stats Fetcher",
+  "description": "A web application to fetch and display user profile statistics from popular coding platforms like Codeforces, LeetCode, and CodeChef by simply entering a username.",
+  "requestFramePermissions": []
+}
