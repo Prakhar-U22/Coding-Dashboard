@@ -16,6 +16,10 @@ export default defineConfig(({ mode }) => {
       server: {
         port: process.env.PORT || 5173,
         host: '0.0.0.0',
+        cors: true,
+        hmr: {
+          host: process.env.RENDER_EXTERNAL_HOSTNAME || 'localhost',
+        },
         proxy: {
           '/api/leetcode': {
             target: 'https://leetcode-api-pied.vercel.app',
@@ -23,6 +27,11 @@ export default defineConfig(({ mode }) => {
             rewrite: (path) => path.replace(/^\/api\/leetcode/, ''),
           }
         }
+      },
+      preview: {
+        port: process.env.PORT || 5173,
+        host: '0.0.0.0',
+        cors: true
       }
     };
 });
